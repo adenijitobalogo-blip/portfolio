@@ -551,7 +551,7 @@ a { text-decoration: none; color: inherit; }
 .marquee-track {
   display: flex;
   gap: 0;
-  animation: marquee 20s linear infinite;
+  animation: marquee 40s linear infinite;
   width: max-content;
 }
 
@@ -565,16 +565,22 @@ a { text-decoration: none; color: inherit; }
 .marquee-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 48px;
+  gap: 12px;
+  padding: 0 56px;
   white-space: nowrap;
   font-family: 'Syne', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-dim);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: var(--transition);
   border-right: 1px solid var(--border);
 }
+
+.marquee-item:hover { color: var(--purple-bright); }
+
+.marquee-item span { font-size: 20px; }
 
 .marquee-item:hover { color: var(--purple-bright); }
 
