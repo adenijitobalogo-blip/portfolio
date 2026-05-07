@@ -226,12 +226,10 @@ a { text-decoration: none; color: inherit; }
 #hero::before {
   content: '';
   position: absolute;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 65%);
+  top: 0; left: 0;
+  width: 500px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(124,58,237,0.18), transparent);
   pointer-events: none;
   z-index: 0;
 }
@@ -239,11 +237,10 @@ a { text-decoration: none; color: inherit; }
 #hero::after {
   content: '';
   position: absolute;
-  bottom: -100px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(ellipse at center, rgba(168,85,247,0.08) 0%, transparent 65%);
+  top: 0; left: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(168,85,247,0.12), transparent);
   pointer-events: none;
   z-index: 0;
 }
