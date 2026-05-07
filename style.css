@@ -551,7 +551,7 @@ a { text-decoration: none; color: inherit; }
 .marquee-track {
   display: flex;
   gap: 0;
-  animation: marquee 60s linear infinite;
+  animation: marquee 90s linear infinite;
   width: max-content;
 }
 
