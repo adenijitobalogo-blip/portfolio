@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tobalogo Adeniji — Social Media & Content Designer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
 
+  <!-- ORB BACKGROUND -->
+  <div class="orb-wrap">
+    <div class="orb"></div>
+  </div>
   <canvas id="particles"></canvas>
 
   <!-- NAV -->
@@ -37,27 +42,29 @@
     </div>
   </nav>
 
-  <!-- BENTO HERO -->
+  <!-- BENTO -->
   <section id="home">
     <div class="bento-grid">
 
-      <!-- BIG CARD — Photo + Name -->
+      <!-- HERO CARD -->
       <div class="bento-card card-hero">
         <div class="card-hero-text">
-          <p class="card-label">Creative Designer</p>
-          <h1 class="card-hero-name">Tobalogo<br/>Adeniji</h1>
-          <p class="card-hero-tagline">I turn ideas into visuals that actually mean something.</p>
-          <a href="Tobalogo-Adeniji-CV.pdf" download class="btn-cv">
-            Download CV
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </a>
+          <div class="hero-badge">
+            <span class="live-dot"></span> Available for freelance
+          </div>
+          <h1 class="hero-name">Tobalogo<br/>Adeniji</h1>
+          <p class="hero-role">Social Media & Content Designer</p>
+          <p class="hero-tagline">I turn ideas into visuals that actually mean something.</p>
+          <div class="hero-btns">
+            <a href="#work" class="btn-primary">See My Work</a>
+            <a href="Tobalogo-Adeniji-CV.pdf" download class="btn-ghost">
+              Download CV ↓
+            </a>
+          </div>
         </div>
         <div class="card-hero-photo">
-          <img src="photo.png" alt="Tobalogo Adeniji" class="hero-img" onerror="this.style.display='none'; document.querySelector('.hero-initials').style.display='flex'"/>
+          <img src="photo.png" alt="Tobalogo Adeniji" class="hero-img" onerror="this.style.display='none';document.querySelector('.hero-initials').style.display='flex'"/>
           <div class="hero-initials">TA</div>
-        </div>
-        <div class="hero-tag-badge">
-          <span class="live-dot"></span> Available for freelance
         </div>
       </div>
 
@@ -66,9 +73,9 @@
         <div class="portfolio-header">
           <div>
             <p class="card-label">Showcase</p>
-            <h2 class="card-title">My Portfolio</h2>
+            <h2 class="card-title">Portfolio</h2>
           </div>
-          <span class="arrow-icon">↗</span>
+          <a href="https://www.behance.net/tobalogoadeniji" target="_blank" class="arrow-link">↗</a>
         </div>
         <div class="portfolio-grid">
           <div class="portfolio-item" onclick="openProject('hadols')">
@@ -77,7 +84,7 @@
           </div>
           <div class="portfolio-item" onclick="openProject('sisters')">
             <div class="p-thumb thumb-sisters"><span>✨</span></div>
-            <p>Sisters Conference</p>
+            <p>Sisters Conf.</p>
           </div>
           <div class="portfolio-item" onclick="openProject('rccg')">
             <div class="p-thumb thumb-rccg"><span>🙏</span></div>
@@ -93,7 +100,7 @@
           </div>
           <div class="portfolio-item" onclick="openProject('mykolo')">
             <div class="p-thumb thumb-mykolo"><span>🎨</span></div>
-            <p>MyKolo Origins</p>
+            <p>MyKolo</p>
           </div>
           <div class="portfolio-item" onclick="openProject('now')">
             <div class="p-thumb thumb-now"><span>🌙</span></div>
@@ -110,54 +117,37 @@
       <div class="bento-card card-services" id="services">
         <div class="services-front" id="servicesFront">
           <p class="card-label">What I Do</p>
-          <h2 class="card-title">Our <em>Services</em></h2>
-          <p class="services-hint">Click to explore</p>
+          <h2 class="card-title">Services</h2>
+          <p class="services-hint">Tap to explore →</p>
           <button class="services-toggle" onclick="toggleServices()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
         </div>
         <div class="services-list" id="servicesList">
+          <button class="services-back" onclick="toggleServices()">← Back</button>
           <div class="service-item">
-            <span class="service-icon">📱</span>
-            <div>
-              <h4>Social Media Design</h4>
-              <p>Carousels, flyers, reel covers & more</p>
-            </div>
+            <span>📱</span>
+            <div><h4>Social Media Design</h4><p>Carousels, flyers, reel covers</p></div>
           </div>
           <div class="service-item">
-            <span class="service-icon">🎪</span>
-            <div>
-              <h4>Event Graphics</h4>
-              <p>Banners, invites & event branding</p>
-            </div>
+            <span>🎪</span>
+            <div><h4>Event Graphics</h4><p>Banners, invites & branding</p></div>
           </div>
           <div class="service-item">
-            <span class="service-icon">✝️</span>
-            <div>
-              <h4>Faith-Based Design</h4>
-              <p>Church comms, conference & worship events</p>
-            </div>
+            <span>✝️</span>
+            <div><h4>Faith-Based Design</h4><p>Church comms & worship events</p></div>
           </div>
           <div class="service-item">
-            <span class="service-icon">🗳️</span>
-            <div>
-              <h4>Political Campaign Design</h4>
-              <p>Campaign visuals & political branding</p>
-            </div>
+            <span>🗳️</span>
+            <div><h4>Political Campaigns</h4><p>Campaign visuals & branding</p></div>
           </div>
           <div class="service-item">
-            <span class="service-icon">🎬</span>
-            <div>
-              <h4>Motion Graphics</h4>
-              <p>Video intros, animated content</p>
-            </div>
+            <span>🎬</span>
+            <div><h4>Motion Graphics</h4><p>Video intros & animation</p></div>
           </div>
           <div class="service-item">
-            <span class="service-icon">🏷️</span>
-            <div>
-              <h4>Brand Identity</h4>
-              <p>Visual identity & brand assets</p>
-            </div>
+            <span>🏷️</span>
+            <div><h4>Brand Identity</h4><p>Visual identity & brand assets</p></div>
           </div>
         </div>
       </div>
@@ -166,7 +156,7 @@
       <div class="bento-card card-about" id="about">
         <p class="card-label">About Me</p>
         <h2 class="card-title">Design is how I give <em>life</em> to words</h2>
-        <p class="about-body">A Nigerian graphic designer and visual storyteller. My journey started at a photo lab — that hands-on foundation is still at the core of everything I create.</p>
+        <p class="about-body">A Nigerian graphic designer and visual storyteller. Started at a photo lab — that hands-on foundation is still at the core of everything I create.</p>
         <div class="about-pills">
           <span>Lagos 🇳🇬</span>
           <span>2+ Years</span>
@@ -197,30 +187,30 @@
       <div class="bento-card card-shop" id="shop">
         <p class="card-label">Digital Products</p>
         <h2 class="card-title">Shop <em>Templates</em></h2>
-        <p class="shop-body">PSD bundles, design templates & more — coming soon.</p>
-        <a href="#" class="btn-shop">Visit Shop ↗</a>
+        <p class="shop-body">PSD bundles & design templates — coming soon.</p>
+        <a href="#" class="btn-primary">Visit Shop ↗</a>
       </div>
 
       <!-- SOCIALS CARD -->
       <div class="bento-card card-socials" id="contact">
-        <p class="card-label">Connect With Me</p>
+        <p class="card-label">Connect</p>
         <h2 class="card-title">Socials</h2>
         <div class="socials-grid">
           <a href="https://www.behance.net/tobalogoadeniji" target="_blank" class="social-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.783 1.807 1.907 1.807.7 0 1.3-.341 1.55-.926l2.299.173zm-5.1-8.125c-.983 0-1.6.659-1.899 1.548h3.595c-.093-.947-.679-1.548-1.696-1.548zM8.262 7.003c1.073 0 1.694.4 2.086 1.028V7.003H12.5V17h-2.152v-.975c-.395.628-1.006 1.028-2.086 1.028C6.184 17.053 5 15.408 5 12.027c0-3.382 1.184-5.024 3.262-5.024zm.55 7.919c1.085 0 1.587-.856 1.587-2.895 0-2.038-.502-2.893-1.587-2.893-1.085 0-1.587.855-1.587 2.893 0 2.039.502 2.895 1.587 2.895zM1 5h5.564v1.664H1V5zm0 3.5h5.564v1.664H1V8.5zM1 12h5.564v1.664H1V12z"/></svg>
-            <span>Behance</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.783 1.807 1.907 1.807.7 0 1.3-.341 1.55-.926l2.299.173zm-5.1-8.125c-.983 0-1.6.659-1.899 1.548h3.595c-.093-.947-.679-1.548-1.696-1.548zM8.262 7.003c1.073 0 1.694.4 2.086 1.028V7.003H12.5V17h-2.152v-.975c-.395.628-1.006 1.028-2.086 1.028C6.184 17.053 5 15.408 5 12.027c0-3.382 1.184-5.024 3.262-5.024zm.55 7.919c1.085 0 1.587-.856 1.587-2.895 0-2.038-.502-2.893-1.587-2.893-1.085 0-1.587.855-1.587 2.893 0 2.039.502 2.895 1.587 2.895zM1 5h5.564v1.664H1V5zm0 3.5h5.564v1.664H1V8.5zM1 12h5.564v1.664H1V12z"/></svg>
+            Behance
           </a>
           <a href="https://www.linkedin.com/in/tobalogo-adeniji" target="_blank" class="social-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            <span>LinkedIn</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
           </a>
           <a href="mailto:adenijitobalogo@gmail.com" class="social-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>Email</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
           </a>
           <a href="https://instagram.com" target="_blank" class="social-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <span>Instagram</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
           </a>
         </div>
       </div>
@@ -230,58 +220,40 @@
     <!-- MARQUEE -->
     <div id="marquee">
       <div class="marquee-track">
-        <div class="marquee-item">Hadols Servings</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">Sisters Conference</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">RCCG YAYA</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">BF Farms</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">GIBC</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">MyKolo Origins</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">Night of Worship</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">WE Premium Gadgets</div>
-        <div class="marquee-dot">✦</div>
-        <!-- Duplicate -->
-        <div class="marquee-item">Hadols Servings</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">Sisters Conference</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">RCCG YAYA</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">BF Farms</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">GIBC</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">MyKolo Origins</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">Night of Worship</div>
-        <div class="marquee-dot">✦</div>
-        <div class="marquee-item">WE Premium Gadgets</div>
-        <div class="marquee-dot">✦</div>
+        <span class="marquee-item">Hadols Servings</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">Sisters Conference</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">RCCG YAYA</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">BF Farms</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">GIBC</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">MyKolo Origins</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">Night of Worship</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">WE Premium Gadgets</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">Hadols Servings</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">Sisters Conference</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">RCCG YAYA</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">BF Farms</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">GIBC</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">MyKolo Origins</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">Night of Worship</span><span class="marquee-dot">✦</span>
+        <span class="marquee-item">WE Premium Gadgets</span><span class="marquee-dot">✦</span>
       </div>
     </div>
   </section>
 
-  <!-- PROJECT MODAL -->
+  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
     <div class="modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-content" id="modalContent"></div>
+      <div id="modalContent"></div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 <strong>Tobalogo Adeniji</strong> — Designed & Built in Lagos 🇳🇬</p>
   </footer>
 
   <script>
-    // Nav
+    // Nav toggle
     const toggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('navMobile');
     toggle.addEventListener('click', () => {
@@ -296,30 +268,28 @@
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Services toggle
+    // Services
     function toggleServices() {
-      const list = document.getElementById('servicesList');
-      const front = document.getElementById('servicesFront');
-      list.classList.toggle('open');
-      front.classList.toggle('hidden');
+      document.getElementById('servicesList').classList.toggle('open');
+      document.getElementById('servicesFront').classList.toggle('hidden');
     }
 
-    // Projects data
+    // Projects
     const projects = {
-      hadols: { title: 'Hadols Servings', tags: ['Social Media', 'Food Brand'], desc: 'Social media content design and visual identity for a food brand — flyers, menus, and promotional graphics that connect emotionally with their audience.', emoji: '🍽️' },
-      sisters: { title: 'Sisters Conference', tags: ['Event Design', 'Conference'], desc: 'Full event visual identity for a faith-based women\'s conference — from invites to stage graphics.', emoji: '✨' },
-      rccg: { title: 'RCCG YAYA', tags: ['Church', 'Motion'], desc: 'Design collection for church communications and event promotions including RCCG Holy Ghost Congress.', emoji: '🙏' },
-      bffarms: { title: 'BF Farms', tags: ['Agribusiness', 'Branding'], desc: 'Social media marketing graphics for an agribusiness brand — clean visuals that communicate trust and quality.', emoji: '🌿' },
-      gibc: { title: 'GIBC', tags: ['Banner Design'], desc: 'Banner designs for Global Impact Business Community events and promotions.', emoji: '🌍' },
-      mykolo: { title: 'MyKolo Origins', tags: ['Carousel', 'Storytelling'], desc: 'Yoruba thrift culture (Alajo) — a visual storytelling carousel that narrates cultural identity through design.', emoji: '🎨' },
-      now: { title: 'Night of Worship', tags: ['Event', 'Worship'], desc: 'Event design for a Night of Worship and the Prophetic — spiritual, dramatic, and intentional.', emoji: '🌙' },
-      we: { title: 'WE Premium Gadgets', tags: ['Social Media', 'Brand'], desc: 'Consistent social media content for a premium gadgets brand — maintaining brand guide compliance throughout.', emoji: '📱' }
+      hadols: { title: 'Hadols Servings', tags: ['Social Media', 'Food Brand'], desc: 'Social media content design and visual identity — flyers, menus, and promotional graphics that connect emotionally with their audience.', emoji: '🍽️', cls: 'thumb-hadols' },
+      sisters: { title: 'Sisters Conference', tags: ['Event Design', 'Conference'], desc: 'Full event visual identity for a faith-based women\'s conference — from invites to stage graphics.', emoji: '✨', cls: 'thumb-sisters' },
+      rccg: { title: 'RCCG YAYA', tags: ['Church', 'Motion'], desc: 'Design collection for church communications and event promotions including RCCG Holy Ghost Congress.', emoji: '🙏', cls: 'thumb-rccg' },
+      bffarms: { title: 'BF Farms', tags: ['Agribusiness', 'Branding'], desc: 'Social media marketing graphics for an agribusiness brand — clean visuals that communicate trust and quality.', emoji: '🌿', cls: 'thumb-bffarms' },
+      gibc: { title: 'GIBC', tags: ['Banner Design'], desc: 'Banner designs for Global Impact Business Community events and promotions.', emoji: '🌍', cls: 'thumb-gibc' },
+      mykolo: { title: 'MyKolo Origins', tags: ['Carousel', 'Storytelling'], desc: 'Yoruba thrift culture (Alajo) — a visual storytelling carousel that narrates cultural identity through design.', emoji: '🎨', cls: 'thumb-mykolo' },
+      now: { title: 'Night of Worship', tags: ['Event', 'Worship'], desc: 'Event design for a Night of Worship and the Prophetic — spiritual, dramatic, and intentional.', emoji: '🌙', cls: 'thumb-now' },
+      we: { title: 'WE Premium Gadgets', tags: ['Social Media', 'Brand'], desc: 'Consistent social media content for a premium gadgets brand — maintaining brand guide compliance.', emoji: '📱', cls: 'thumb-we' }
     };
 
     function openProject(id) {
       const p = projects[id];
       document.getElementById('modalContent').innerHTML = `
-        <div class="modal-thumb modal-thumb-${id}">${p.emoji}</div>
+        <div class="modal-thumb ${p.cls}">${p.emoji}</div>
         <div class="modal-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
         <h2>${p.title}</h2>
         <p>${p.desc}</p>
@@ -342,14 +312,14 @@
     let W = canvas.width = window.innerWidth;
     let H = canvas.height = window.innerHeight;
     window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
-    const dots = Array.from({ length: 50 }, () => ({
+    const dots = Array.from({ length: 40 }, () => ({
       x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 1.2 + 0.3,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: (Math.random() - 0.5) * 0.3,
-      o: Math.random() * 0.3 + 0.05
+      r: Math.random() * 1 + 0.3,
+      dx: (Math.random() - 0.5) * 0.25,
+      dy: (Math.random() - 0.5) * 0.25,
+      o: Math.random() * 0.2 + 0.05
     }));
-    function drawParticles() {
+    function draw() {
       ctx.clearRect(0, 0, W, H);
       dots.forEach(d => {
         d.x += d.dx; d.y += d.dy;
@@ -367,16 +337,15 @@
             ctx.beginPath();
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.strokeStyle = `rgba(124,58,237,${0.06 * (1 - dist / 100)})`;
+            ctx.strokeStyle = `rgba(124,58,237,${0.05*(1-dist/100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
       }
-      requestAnimationFrame(drawParticles);
+      requestAnimationFrame(draw);
     }
-    drawParticles();
+    draw();
   </script>
-
 </body>
 </html>
