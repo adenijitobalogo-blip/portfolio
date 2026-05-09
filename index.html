@@ -253,6 +253,59 @@
   </footer>
 
   <script>
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  const bar = document.querySelector('.preloader-bar');
+
+  bar.style.transform = 'scaleY(1)';
+
+  setTimeout(() => {
+    bar.style.transform = 'scaleY(0)';
+    setTimeout(() => {
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        startAnimations();
+      }, 400);
+    }, 600);
+  }, 400);
+});
+
+function startAnimations() {
+  const isMobile = window.innerWidth <= 900;
+  const cards = document.querySelectorAll('.bento-card');
+  const marquee = document.getElementById('marquee');
+
+  if (isMobile) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    cards.forEach(card => observer.observe(card));
+    observer.observe(marquee);
+  } else {
+    const order = [
+      '.card-hero',
+      '.card-portfolio',
+      '.card-services',
+      '.card-about',
+      '.card-stats',
+      '.card-shop',
+      '.card-socials'
+    ];
+    order.forEach((selector, i) => {
+      const el = document.querySelector(selector);
+      if (el) setTimeout(() => el.classList.add('visible'), i * 120);
+    });
+    setTimeout(() => marquee.classList.add('visible'), order.length * 120 + 100);
+  }
+}
+
 // Nav toggle
 const toggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('navMobile');
@@ -346,7 +399,6 @@ function draw() {
   requestAnimationFrame(draw);
 }
 draw();
-
 // ===== CARD ANIMATIONS =====
 const cards = document.querySelectorAll('.bento-card');
 const marquee = document.getElementById('marquee');
