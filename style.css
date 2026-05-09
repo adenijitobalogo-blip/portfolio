@@ -530,4 +530,143 @@ footer strong { color: var(--text-muted); }
   .portfolio-grid { grid-template-columns: repeat(4,1fr); }
   .card-stats { flex-direction: row; }
   .socials-grid { grid-template-columns: 1fr 1fr; }
+
+  // Nav toggle
+const toggle = document.getElementById('navToggle');
+const mobileNav = document.getElementById('navMobile');
+toggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+  toggle.classList.toggle('active');
+});
+mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+  mobileNav.classList.remove('open');
+  toggle.classList.remove('active');
+}));
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Services
+function toggleServices() {
+  document.getElementById('servicesList').classList.toggle('open');
+  document.getElementById('servicesFront').classList.toggle('hidden');
 }
+
+// Projects
+const projects = {
+  hadols: { title: 'Hadols Servings', tags: ['Social Media', 'Food Brand'], desc: 'Social media content design and visual identity — flyers, menus, and promotional graphics that connect emotionally with their audience.', emoji: '🍽️', cls: 'thumb-hadols' },
+  sisters: { title: 'Sisters Conference', tags: ['Event Design', 'Conference'], desc: 'Full event visual identity for a faith-based women\'s conference — from invites to stage graphics.', emoji: '✨', cls: 'thumb-sisters' },
+  rccg: { title: 'RCCG YAYA', tags: ['Church', 'Motion'], desc: 'Design collection for church communications and event promotions including RCCG Holy Ghost Congress.', emoji: '🙏', cls: 'thumb-rccg' },
+  bffarms: { title: 'BF Farms', tags: ['Agribusiness', 'Branding'], desc: 'Social media marketing graphics for an agribusiness brand — clean visuals that communicate trust and quality.', emoji: '🌿', cls: 'thumb-bffarms' },
+  gibc: { title: 'GIBC', tags: ['Banner Design'], desc: 'Banner designs for Global Impact Business Community events and promotions.', emoji: '🌍', cls: 'thumb-gibc' },
+  mykolo: { title: 'MyKolo Origins', tags: ['Carousel', 'Storytelling'], desc: 'Yoruba thrift culture (Alajo) — a visual storytelling carousel that narrates cultural identity through design.', emoji: '🎨', cls: 'thumb-mykolo' },
+  now: { title: 'Night of Worship', tags: ['Event', 'Worship'], desc: 'Event design for a Night of Worship and the Prophetic — spiritual, dramatic, and intentional.', emoji: '🌙', cls: 'thumb-now' },
+  we: { title: 'WE Premium Gadgets', tags: ['Social Media', 'Brand'], desc: 'Consistent social media content for a premium gadgets brand — maintaining brand guide compliance.', emoji: '📱', cls: 'thumb-we' }
+};
+
+function openProject(id) {
+  const p = projects[id];
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-thumb ${p.cls}">${p.emoji}</div>
+    <div class="modal-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
+    <h2>${p.title}</h2>
+    <p>${p.desc}</p>
+    <a href="https://www.behance.net/tobalogoadeniji" target="_blank" class="btn-primary">View on Behance ↗</a>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Particles
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
+const dots = Array.from({ length: 40 }, () => ({
+  x: Math.random() * W, y: Math.random() * H,
+  r: Math.random() * 1 + 0.3,
+  dx: (Math.random() - 0.5) * 0.25,
+  dy: (Math.random() - 0.5) * 0.25,
+  o: Math.random() * 0.2 + 0.05
+}));
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  dots.forEach(d => {
+    d.x += d.dx; d.y += d.dy;
+    if (d.x < 0 || d.x > W) d.dx *= -1;
+    if (d.y < 0 || d.y > H) d.dy *= -1;
+    ctx.beginPath();
+    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(168,85,247,${d.o})`;
+    ctx.fill();
+  });
+  for (let i = 0; i < dots.length; i++) {
+    for (let j = i + 1; j < dots.length; j++) {
+      const dist = Math.hypot(dots[i].x - dots[j].x, dots[i].y - dots[j].y);
+      if (dist < 100) {
+        ctx.beginPath();
+        ctx.moveTo(dots[i].x, dots[i].y);
+        ctx.lineTo(dots[j].x, dots[j].y);
+        ctx.strokeStyle = `rgba(124,58,237,${0.05*(1-dist/100)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+
+// ===== CARD ANIMATIONS =====
+const cards = document.querySelectorAll('.bento-card');
+const marquee = document.getElementById('marquee');
+const isMobile = window.innerWidth <= 900;
+
+if (isMobile) {
+  // Mobile — scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  cards.forEach(card => observer.observe(card));
+  observer.observe(marquee);
+
+} else {
+  // Desktop — staggered load animation
+  const order = [
+    '.card-hero',
+    '.card-portfolio',
+    '.card-services',
+    '.card-about',
+    '.card-stats',
+    '.card-shop',
+    '.card-socials'
+  ];
+
+  order.forEach((selector, i) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 100 + i * 120);
+    }
+  });
+
+  setTimeout(() => {
+    marquee.classList.add('visible');
+  }, 100 + order.length * 120);
+}
+
