@@ -9,18 +9,9 @@
 </head>
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader">
-    <div class="preloader-bar"></div>
-  </div>
-
-  <!-- ORB -->
-  <div class="orb-wrap">
-    <div class="orb"></div>
-  </div>
+  <div class="orb-wrap"><div class="orb"></div></div>
   <canvas id="particles"></canvas>
 
-  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">Toba<span>.</span></a>
@@ -46,11 +37,9 @@
     </div>
   </nav>
 
-  <!-- BENTO -->
   <section id="home">
     <div class="bento-grid">
 
-      <!-- HERO CARD -->
       <div class="bento-card card-hero">
         <div class="card-hero-text">
           <div class="hero-badge">
@@ -71,7 +60,6 @@
         </div>
       </div>
 
-      <!-- PORTFOLIO CARD -->
       <div class="bento-card card-portfolio" id="work">
         <div class="portfolio-header">
           <div>
@@ -116,7 +104,6 @@
         </div>
       </div>
 
-      <!-- SERVICES CARD -->
       <div class="bento-card card-services" id="services-card">
         <div class="services-front" id="servicesFront">
           <p class="card-label">What I Do</p>
@@ -155,7 +142,6 @@
         </div>
       </div>
 
-      <!-- ABOUT CARD -->
       <div class="bento-card card-about" id="about-card">
         <p class="card-label">About Me</p>
         <h2 class="card-title">Design is how I give <em>life</em> to words</h2>
@@ -168,7 +154,6 @@
         </div>
       </div>
 
-      <!-- STATS CARD -->
       <div class="bento-card card-stats">
         <div class="stat-item">
           <span class="stat-num">8+</span>
@@ -186,7 +171,6 @@
         </div>
       </div>
 
-      <!-- SHOP CARD -->
       <div class="bento-card card-shop" id="shop-card">
         <p class="card-label">Digital Products</p>
         <h2 class="card-title">Shop <em>Templates</em></h2>
@@ -194,7 +178,6 @@
         <a href="#" class="btn-primary">Visit Shop ↗</a>
       </div>
 
-      <!-- SOCIALS CARD -->
       <div class="bento-card card-socials" id="contact-card">
         <p class="card-label">Connect</p>
         <h2 class="card-title">Socials</h2>
@@ -220,7 +203,6 @@
 
     </div>
 
-    <!-- MARQUEE -->
     <div id="marquee">
       <div class="marquee-track">
         <span class="marquee-item">Hadols Servings</span><span class="marquee-dot">✦</span>
@@ -243,7 +225,6 @@
     </div>
   </section>
 
-  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
     <div class="modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">✕</button>
@@ -256,57 +237,6 @@
   </footer>
 
   <script>
-    // Preloader
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      const bar = document.querySelector('.preloader-bar');
-      bar.style.transform = 'scaleY(1)';
-      setTimeout(() => {
-        bar.style.transform = 'scaleY(0)';
-        setTimeout(() => {
-          preloader.style.opacity = '0';
-          setTimeout(() => {
-            preloader.style.display = 'none';
-            startAnimations();
-          }, 400);
-        }, 600);
-      }, 400);
-    });
-
-    function startAnimations() {
-      const isMobile = window.innerWidth <= 900;
-      const cards = document.querySelectorAll('.bento-card');
-      const marquee = document.getElementById('marquee');
-
-      if (isMobile) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-              observer.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        cards.forEach(card => observer.observe(card));
-        observer.observe(marquee);
-      } else {
-        const order = [
-          '.card-hero',
-          '.card-portfolio',
-          '.card-services',
-          '.card-about',
-          '.card-stats',
-          '.card-shop',
-          '.card-socials'
-        ];
-        order.forEach((selector, i) => {
-          const el = document.querySelector(selector);
-          if (el) setTimeout(() => el.classList.add('visible'), i * 120);
-        });
-        setTimeout(() => marquee.classList.add('visible'), order.length * 120 + 100);
-      }
-    }
-
     // Nav
     const toggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('navMobile');
@@ -333,7 +263,7 @@
       hadols: { title: 'Hadols Servings', tags: ['Social Media', 'Food Brand'], desc: 'Social media content design and visual identity — flyers, menus, and promotional graphics that connect emotionally with their audience.', emoji: '🍽️', cls: 'thumb-hadols' },
       sisters: { title: 'Sisters Conference', tags: ['Event Design', 'Conference'], desc: 'Full event visual identity for a faith-based women\'s conference — from invites to stage graphics.', emoji: '✨', cls: 'thumb-sisters' },
       rccg: { title: 'RCCG YAYA', tags: ['Church', 'Motion'], desc: 'Design collection for church communications and event promotions including RCCG Holy Ghost Congress.', emoji: '🙏', cls: 'thumb-rccg' },
-      bffarms: { title: 'BF Farms', tags: ['Agribusiness', 'Branding'], desc: 'Social media marketing graphics for an agribusiness brand — clean visuals that communicate trust and quality.', emoji: '🌿', cls: 'thumb-bffarms' },
+      bffarms: { title: 'BF Farms', tags: ['Agribusiness', 'Branding'], desc: 'Social media marketing graphics for an agribusiness brand.', emoji: '🌿', cls: 'thumb-bffarms' },
       gibc: { title: 'GIBC', tags: ['Banner Design'], desc: 'Banner designs for Global Impact Business Community events and promotions.', emoji: '🌍', cls: 'thumb-gibc' },
       mykolo: { title: 'MyKolo Origins', tags: ['Carousel', 'Storytelling'], desc: 'Yoruba thrift culture (Alajo) — a visual storytelling carousel that narrates cultural identity through design.', emoji: '🎨', cls: 'thumb-mykolo' },
       now: { title: 'Night of Worship', tags: ['Event', 'Worship'], desc: 'Event design for a Night of Worship and the Prophetic — spiritual, dramatic, and intentional.', emoji: '🌙', cls: 'thumb-now' },
@@ -360,15 +290,37 @@
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+    // Scroll reveal — all devices
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.bento-card, #marquee').forEach(el => revealObserver.observe(el));
+
+    // Desktop stagger on load
+    if (window.innerWidth > 900) {
+      const order = ['.card-hero','.card-portfolio','.card-services','.card-about','.card-stats','.card-shop','.card-socials'];
+      order.forEach((sel, i) => {
+        const el = document.querySelector(sel);
+        if (el) {
+          revealObserver.unobserve(el);
+          setTimeout(() => el.classList.add('visible'), i * 130);
+        }
+      });
+      setTimeout(() => document.getElementById('marquee').classList.add('visible'), order.length * 130);
+    }
+
     // Particles
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let W = canvas.width = window.innerWidth;
     let H = canvas.height = window.innerHeight;
-    window.addEventListener('resize', () => {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    });
+    window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
     const dots = Array.from({ length: 40 }, () => ({
       x: Math.random() * W, y: Math.random() * H,
       r: Math.random() * 1 + 0.3,
