@@ -450,7 +450,24 @@ a { text-decoration: none; color: inherit; }
 }
 .marquee-item:hover { color: var(--purple-bright); }
 .marquee-dot { color: var(--purple-bright); font-size: 8px; flex-shrink: 0; opacity: 0.6; }
+.marquee-logo {
+  display: flex;
+  align-items: center;
+  padding: 0 36px;
+  flex-shrink: 0;
+}
 
+.marquee-logo img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.5);
+  transition: var(--transition);
+}
+
+.marquee-logo img:hover {
+  filter: grayscale(0%) brightness(1);
+}
 /* MODAL */
 .modal-overlay {
   position: fixed; inset: 0;
