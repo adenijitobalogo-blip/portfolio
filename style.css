@@ -537,3 +537,13 @@ footer strong { color: var(--text-muted); }
   .card-stats { flex-direction: row; }
   .socials-grid { grid-template-columns: 1fr 1fr; }
 }
+.p-thumb img {
+  width: 70%; height: 70%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.6);
+  transition: var(--transition);
+}
+.portfolio-item:hover .p-thumb img {
+  filter: grayscale(0%) brightness(1);
+}
+.thumb-pray { background: rgba(255,200,150,0.06); }
