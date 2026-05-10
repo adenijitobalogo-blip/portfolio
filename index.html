@@ -290,7 +290,6 @@
   </footer>
 
   <script>
-    // Nav
     const toggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('navMobile');
     toggle.addEventListener('click', () => {
@@ -305,13 +304,11 @@
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Services
     function toggleServices() {
       document.getElementById('servicesList').classList.toggle('open');
       document.getElementById('servicesFront').classList.toggle('hidden');
     }
 
-    // Projects
     const projects = {
       hadols: { title: 'Hadols Servings', tags: ['Social Media', 'Food Brand'], desc: 'Social media content design and visual identity — flyers, menus, and promotional graphics that connect emotionally with their audience.', group: 'hadols' },
       sisters: { title: 'Sisters Conference', tags: ['Event Design', 'Conference'], desc: 'Full event visual identity for a faith-based women\'s conference — from invites to stage graphics.', group: 'sisters' },
@@ -343,7 +340,6 @@
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // Scroll reveal
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -355,7 +351,6 @@
 
     document.querySelectorAll('.bento-card, #marquee').forEach(el => revealObserver.observe(el));
 
-    // Desktop stagger
     if (window.innerWidth > 900) {
       const order = ['.card-hero','.card-portfolio','.card-services','.card-about','.card-stats','.card-shop','.card-socials'];
       order.forEach((sel, i) => {
@@ -368,7 +363,6 @@
       setTimeout(() => document.getElementById('marquee').classList.add('visible'), order.length * 130);
     }
 
-    // Particles
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let W = canvas.width = window.innerWidth;
