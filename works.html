@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Works — Tobalogo Adeniji</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="works.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="orb-wrap"><div class="orb"></div></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Toba<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about-card">About</a></li>
+        <li><a href="works.html" class="nav-active">Work</a></li>
+        <li><a href="index.html#services-card">Services</a></li>
+        <li><a href="index.html#shop-card">Shop</a></li>
+        <li><a href="index.html#contact-card" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="index.html#about-card">About</a>
+      <a href="works.html">Work</a>
+      <a href="index.html#services-card">Services</a>
+      <a href="index.html#shop-card">Shop</a>
+      <a href="index.html#contact-card">Contact</a>
+    </div>
+  </nav>
+
+  <main id="works-main">
+    <div class="works-hero">
+      <p class="card-label">Portfolio</p>
+      <h1 class="works-title">All <em>Works</em></h1>
+      <p class="works-sub">A collection of designs across brands, events, and personal projects.</p>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="filter-wrap">
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterWork('all')">All</button>
+        <button class="filter-btn" onclick="filterWork('hadols')">Hadols Servings</button>
+        <button class="filter-btn" onclick="filterWork('sisters')">Sisters Conference</button>
+        <button class="filter-btn" onclick="filterWork('rccg')">RCCG YAYA</button>
+        <button class="filter-btn" onclick="filterWork('bffarms')">BF Farms</button>
+        <button class="filter-btn" onclick="filterWork('gibc')">GIBC</button>
+        <button class="filter-btn" onclick="filterWork('wepremium')">WE Premium</button>
+        <button class="filter-btn" onclick="filterWork('pray')">Praying Woman</button>
+        <button class="filter-btn" onclick="filterWork('general')">General</button>
+      </div>
+    </div>
+
+    <!-- WORKS GRID -->
+    <div class="works-container">
+
+      <!-- HADOLS -->
+      <div class="works-section" id="section-hadols" data-group="hadols">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-hadols.png" alt="Hadols Servings"/>
+          </div>
+          <div>
+            <p class="card-label">Food Brand</p>
+            <h2 class="section-title">Hadols Servings</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('hadols-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="hadols-1.jpg" alt="Hadols Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>Hadols — Design 1</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('hadols-2')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="hadols-2.jpg" alt="Hadols Design 2" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>Hadols — Design 2</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('hadols-3')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="hadols-3.jpg" alt="Hadols Design 3" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>Hadols — Design 3</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTERS CONFERENCE -->
+      <div class="works-section" id="section-sisters" data-group="sisters">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-sisters.png" alt="Sisters Conference"/>
+          </div>
+          <div>
+            <p class="card-label">Event Design</p>
+            <h2 class="section-title">Sisters Conference</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('sisters-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="sisters-1.jpg" alt="Sisters Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Conference</p>
+              <h3>Sisters — Main Design</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('sisters-2')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="sisters-2.jpg" alt="Sisters Design 2" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Conference</p>
+              <h3>Sisters — Landscape</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RCCG YAYA -->
+      <div class="works-section" id="section-rccg" data-group="rccg">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-yaya.png" alt="RCCG YAYA"/>
+          </div>
+          <div>
+            <p class="card-label">Church</p>
+            <h2 class="section-title">RCCG YAYA</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('rccg-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="rccg-1.jpg" alt="RCCG Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Church Graphics</p>
+              <h3>RCCG — Design 1</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('rccg-2')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="rccg-2.jpg" alt="RCCG Design 2" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Motion</p>
+              <h3>RCCG — Video Intro</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BF FARMS -->
+      <div class="works-section" id="section-bffarms" data-group="bffarms">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-bffarms.png" alt="BF Farms"/>
+          </div>
+          <div>
+            <p class="card-label">Agribusiness</p>
+            <h2 class="section-title">BF Farms</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('bffarms-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="bffarms-1.jpg" alt="BF Farms Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>BF Farms — Design 1</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('bffarms-2')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="bffarms-2.jpg" alt="BF Farms Design 2" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>BF Farms — Design 2</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GIBC -->
+      <div class="works-section" id="section-gibc" data-group="gibc">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-gibc.png" alt="GIBC"/>
+          </div>
+          <div>
+            <p class="card-label">Banner Design</p>
+            <h2 class="section-title">GIBC</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('gibc-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="gibc-1.jpg" alt="GIBC Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Banner</p>
+              <h3>GIBC — Banner 1</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('gibc-2')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="gibc-2.jpg" alt="GIBC Design 2" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Banner</p>
+              <h3>GIBC — Banner 2</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WE PREMIUM -->
+      <div class="works-section" id="section-wepremium" data-group="wepremium">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-wepremium.png" alt="WE Premium"/>
+          </div>
+          <div>
+            <p class="card-label">Social Media</p>
+            <h2 class="section-title">WE Premium Gadgets</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('we-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="we-1.jpg" alt="WE Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>WE Premium — Design 1</h3>
+            </div>
+          </div>
+          <div class="work-card" onclick="openWork('we-2')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="we-2.jpg" alt="WE Design 2" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Social Media</p>
+              <h3>WE Premium — Design 2</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRAYING WOMAN -->
+      <div class="works-section" id="section-pray" data-group="pray">
+        <div class="section-header">
+          <div class="section-logo">
+            <img src="logo-pray.png" alt="Praying Woman"/>
+          </div>
+          <div>
+            <p class="card-label">Faith Based</p>
+            <h2 class="section-title">Praying Woman</h2>
+          </div>
+        </div>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('pray-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="pray-1.jpg" alt="Pray Design 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Faith Based</p>
+              <h3>Praying Woman — Design 1</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GENERAL -->
+      <div class="works-section" id="section-general" data-group="general">
+        <div class="section-header">
+          <div>
+            <p class="card-label">General Designs</p>
+            <h2 class="section-title">Other <em>Works</em></h2>
+          </div>
+        </div>
+
+        <h3 class="sub-group-title">Anniversary Designs</h3>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('anniversary-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="anniversary-1.jpg" alt="Anniversary 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Anniversary</p>
+              <h3>Anniversary — Design 1</h3>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-group-title">Thanksgiving Designs</h3>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('thanksgiving-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="thanksgiving-1.jpg" alt="Thanksgiving 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Thanksgiving</p>
+              <h3>Thanksgiving — Design 1</h3>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-group-title">Event Flyers</h3>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('event-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="event-1.jpg" alt="Event 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Event Flyer</p>
+              <h3>Event Flyer — Design 1</h3>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-group-title">Birthday Designs</h3>
+        <div class="works-grid">
+          <div class="work-card" onclick="openWork('birthday-1')">
+            <div class="work-thumb placeholder-thumb">
+              <img src="birthday-1.jpg" alt="Birthday 1" onerror="this.parentElement.classList.add('no-img')"/>
+              <span class="placeholder-label">Coming Soon</span>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Birthday</p>
+              <h3>Birthday — Design 1</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- WORK MODAL -->
+  <div class="modal-overlay" id="workModal" onclick="closeWork()">
+    <div class="modal work-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeWork()">✕</button>
+      <div id="workModalContent"></div>
+      <div class="suggestions">
+        <p class="suggestions-label">You might also like</p>
+        <div class="suggestions-grid" id="suggestionsGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2025 <strong>Tobalogo Adeniji</strong> — Designed & Built in Lagos 🇳🇬</p>
+      <a href="index.html" class="footer-back">← Back to Home</a>
+    </div>
+  </footer>
+
+  <script>
+    // Nav
+    const toggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('navMobile');
+    toggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      toggle.classList.remove('active');
+    }));
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Filter
+    function filterWork(group) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.works-section').forEach(s => {
+        if (group === 'all' || s.dataset.group === group) {
+          s.style.display = 'block';
+        } else {
+          s.style.display = 'none';
+        }
+      });
+      if (group !== 'all') {
+        const target = document.getElementById('section-' + group);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Check URL hash for direct section link
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const btn = document.querySelector(`[onclick="filterWork('${hash}')"]`);
+        if (btn) btn.click();
+      }
+      // Scroll reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.work-card, .works-section').forEach(el => observer.observe(el));
+    });
+
+    // Work data
+    const works = {
+      'hadols-1': { title: 'Hadols — Design 1', tag: 'Social Media', group: 'hadols', img: 'hadols-1.jpg' },
+      'hadols-2': { title: 'Hadols — Design 2', tag: 'Social Media', group: 'hadols', img: 'hadols-2.jpg' },
+      'hadols-3': { title: 'Hadols — Design 3', tag: 'Social Media', group: 'hadols', img: 'hadols-3.jpg' },
+      'sisters-1': { title: 'Sisters — Main Design', tag: 'Conference', group: 'sisters', img: 'sisters-1.jpg' },
+      'sisters-2': { title: 'Sisters — Landscape', tag: 'Conference', group: 'sisters', img: 'sisters-2.jpg' },
+      'rccg-1': { title: 'RCCG — Design 1', tag: 'Church', group: 'rccg', img: 'rccg-1.jpg' },
+      'rccg-2': { title: 'RCCG — Video Intro', tag: 'Motion', group: 'rccg', img: 'rccg-2.jpg' },
+      'bffarms-1': { title: 'BF Farms — Design 1', tag: 'Social Media', group: 'bffarms', img: 'bffarms-1.jpg' },
+      'bffarms-2': { title: 'BF Farms — Design 2', tag: 'Social Media', group: 'bffarms', img: 'bffarms-2.jpg' },
+      'gibc-1': { title: 'GIBC — Banner 1', tag: 'Banner', group: 'gibc', img: 'gibc-1.jpg' },
+      'gibc-2': { title: 'GIBC — Banner 2', tag: 'Banner', group: 'gibc', img: 'gibc-2.jpg' },
+      'we-1': { title: 'WE Premium — Design 1', tag: 'Social Media', group: 'wepremium', img: 'we-1.jpg' },
+      'we-2': { title: 'WE Premium — Design 2', tag: 'Social Media', group: 'wepremium', img: 'we-2.jpg' },
+      'pray-1': { title: 'Praying Woman — Design 1', tag: 'Faith Based', group: 'pray', img: 'pray-1.jpg' },
+      'anniversary-1': { title: 'Anniversary — Design 1', tag: 'Anniversary', group: 'general', img: 'anniversary-1.jpg' },
+      'thanksgiving-1': { title: 'Thanksgiving — Design 1', tag: 'Thanksgiving', group: 'general', img: 'thanksgiving-1.jpg' },
+      'event-1': { title: 'Event Flyer — Design 1', tag: 'Event Flyer', group: 'general', img: 'event-1.jpg' },
+      'birthday-1': { title: 'Birthday — Design 1', tag: 'Birthday', group: 'general', img: 'birthday-1.jpg' },
+    };
+
+    function openWork(id) {
+      const w = works[id];
+      if (!w) return;
+      document.getElementById('workModalContent').innerHTML = `
+        <div class="work-modal-img">
+          <img src="${w.img}" alt="${w.title}" onerror="this.parentElement.classList.add('no-img')"/>
+          <span class="placeholder-label">Coming Soon</span>
+        </div>
+        <p class="work-tag" style="margin-top:16px">${w.tag}</p>
+        <h2 style="font-family:'Raleway',sans-serif;font-size:22px;font-weight:800;margin-bottom:8px">${w.title}</h2>
+      `;
+      // Suggestions — other works from different groups
+      const suggestions = Object.entries(works)
+        .filter(([k, v]) => k !== id && v.group !== w.group)
+        .slice(0, 3);
+      document.getElementById('suggestionsGrid').innerHTML = suggestions.map(([k, v]) => `
+        <div class="suggestion-card" onclick="openWork('${k}')">
+          <div class="suggestion-thumb ${v.group}-thumb">
+            <img src="${v.img}" alt="${v.title}" onerror="this.parentElement.classList.add('no-img')"/>
+          </div>
+          <p>${v.title}</p>
+        </div>
+      `).join('');
+      document.getElementById('workModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeWork() {
+      document.getElementById('workModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeWork(); });
+  </script>
+
+</body>
+</html>
