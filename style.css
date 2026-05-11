@@ -547,3 +547,160 @@ footer strong { color: var(--text-muted); }
   filter: grayscale(0%) brightness(1);
 }
 .thumb-pray { background: rgba(255,200,150,0.06); }
+/* ===== LIQUID GLASS FOLDER ===== */
+.folder-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px 0 8px;
+  position: relative;
+}
+
+.folder-wrap {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  cursor: pointer;
+}
+
+/* DESIGN SHEETS */
+.design-sheet {
+  position: absolute;
+  width: 120px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg) translateY(0px);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  z-index: 1;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.design-sheet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sheet-1 { z-index: 3; }
+.sheet-2 { z-index: 2; }
+.sheet-3 { z-index: 1; }
+
+/* HOVER — sheets fan out */
+.folder-wrap:hover .sheet-1 {
+  transform: translateX(-120%) rotate(-18deg) translateY(-40px);
+}
+.folder-wrap:hover .sheet-2 {
+  transform: translateX(-50%) rotate(0deg) translateY(-50px);
+}
+.folder-wrap:hover .sheet-3 {
+  transform: translateX(20%) rotate(18deg) translateY(-40px);
+}
+
+/* GLASS FOLDER */
+.glass-folder {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 120px;
+  z-index: 4;
+}
+
+.folder-back {
+  position: absolute;
+  bottom: 0;
+  width: 160px;
+  height: 100px;
+  background: linear-gradient(145deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0 12px 12px 12px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.folder-tab {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 60px;
+  height: 18px;
+  background: linear-gradient(145deg,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.05)
+  );
+  border: 1px solid rgba(255,255,255,0.15);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  backdrop-filter: blur(16px);
+}
+
+.folder-front {
+  position: absolute;
+  bottom: 0;
+  width: 160px;
+  height: 90px;
+  background: linear-gradient(160deg,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.06) 40%,
+    rgba(124,58,237,0.08) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 0 8px 12px 12px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -1px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.folder-shine {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.25),
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.folder-wrap:hover .folder-front {
+  height: 70px;
+  background: linear-gradient(160deg,
+    rgba(255,255,255,0.22) 0%,
+    rgba(255,255,255,0.08) 40%,
+    rgba(124,58,237,0.12) 100%
+  );
+}
+
+.folder-hint {
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.folder-wrap:hover ~ .folder-hint {
+  opacity: 0;
+}
